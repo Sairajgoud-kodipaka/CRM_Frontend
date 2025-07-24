@@ -52,7 +52,7 @@ export default function AddMemberModal({ isOpen, onClose, onSuccess }: AddMember
     notes: '',
   });
   
-  const [errors, setErrors] = useState<Partial<TeamMemberData>>({});
+  const [errors, setErrors] = useState<Partial<Record<keyof TeamMemberData, string>>>({});
   const [isLoading, setIsLoading] = useState(false);
   const [stores, setStores] = useState<any[]>([]);
 
@@ -67,7 +67,7 @@ export default function AddMemberModal({ isOpen, onClose, onSuccess }: AddMember
   }, []);
 
   const validateForm = () => {
-    const newErrors: Partial<TeamMemberData> = {};
+    const newErrors: Partial<Record<keyof TeamMemberData, string>> = {};
     
     if (!formData.username.trim()) {
       newErrors.username = 'Username is required';
