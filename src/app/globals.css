@@ -1,0 +1,73 @@
+/* MUI Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Base Styles */
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Utility Classes (MUI-compatible) */
+.text-balance {
+  text-wrap: balance;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sidebar Animation Classes (converted to CSS-in-JS style) */
+.sidebar-collapsed {
+  transform: translateX(-256px);
+  transition: transform 200ms ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .sidebar-collapsed {
+    transform: translateX(0);
+  }
+}
+
+.sidebar-expanded {
+  transform: translateX(0);
+  transition: transform 200ms ease-in-out;
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1200;
+}
+
+@media (min-width: 768px) {
+  .sidebar-backdrop {
+    display: none;
+  }
+}
+
+/* MUI Theme Compatibility */
+.MuiCssBaseline-root {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+} 
